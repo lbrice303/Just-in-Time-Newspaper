@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newpaper Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <header class="header">
+            <h1><a href="index.html" style="text-decoration: none; color: inherit;">Just In Time</a></h1>
+            <nav>
+                <div class="hamburger">☰</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="article.html">Article</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </nav>
+    </header>
+
+    <main>
+        <section class="featured-article">
+            <h2><u><a href="article.html" style="text-decoration: none; color: inherit;">Featured Article</a></u></h2>
+            <h3>Ratatouille's Remy Charged with Assault: From Chef to Suspect</h3>
+            <p>In a shocking turn of events Remy has been charged with assault.As the city of Paris waits for the trial to unfold, one thing is certain: the world will never look at a rat in the kitchen the same way again. </p>
+            <div class="photo"></div>
+                <img src="Images/Remy.webp" alt="Photo of Remy the Rat">
+            </div>
+        </section>
+
+        
+        <section class="latest-news">
+            <h2><u><a href="article.html" style="text-decoration: none; color: inherit;">Latest News</a></u></h2>
+            <h3>Scandal in Far Far Away: Shrek Allegedly Cheating with Donkey?!</h3>
+            <p>In a shocking turn of events, rumors have surfaced in the kingdom of Far Far Away that 
+                the beloved ogre Shrek has been involved in an affair with none other than his best friend, Donkey. 
+            </p><div class="photo"></div>
+                <img src="Images/shrek.webp" alt="Photo of Remy the Rat">
+            </div>
+            
+        </section>
+    </main>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click',function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+
+    <footer>
+        <p>Contact us at justintime@time.com</p>
+    </footer>
+    
+</body>
+</html>

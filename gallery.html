@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1><a href="index.html" style="text-decoration: none; color: inherit;">Just In Time</a></h1>
+        <nav>
+            <div class="hamburger">☰</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="article.html">Article</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2 class="gallery-header">Photot Gallery</h2>
+    
+    <main class="photo-gallery">
+        <div class="photo-container">
+            <div class="photo"><img src="Images/Remy1.webp" alt="Photo Discription"></div>
+            <div class="photo"><img src="Images/Remy2.webp" alt="Photo Discription"></div>
+            <div class="photo"><img src="Images/Remy.webp" alt="Photo Discription"></div>
+            <div class="photo"><img src="Images/shrek.webp" alt="Photo Discription"></div>
+            <div class="photo"><img src="Images/shrek1.jfif" alt="Photo Discription"></div>
+            <div class="photo"><img src="Images/shrek2.jfif" alt="Photo Discription"></div>
+        </div>
+        
+        <div class="gallery-controls">
+            <button id="prev">Previous</button>
+            <button id="next">Next</button>
+        </div>
+    
+    </main>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click',function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        const photos = document.querySelectorAll('.photo');
+        const totalPhotos = photos.length;
+        let currentPhotoIndex = 0;
+
+        function showPhoto(index) {
+            photos.forEach((photo, i) => {
+                photo.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        function nextPhoto() {
+            currentPhotoIndex = (currentPhotoIndex + 1) % totalPhotos;
+            showPhoto(currentPhotoIndex);
+        }
+
+        function prevPhoto() {
+            currentPhotoIndex = (currentPhotoIndex - 1 + totalPhotos) % totalPhotos;
+            showPhoto(currentPhotoIndex);
+        }
+
+        document.getElementById('next').addEventListener('click', nextPhoto);
+        document.getElementById('prev').addEventListener('click', prevPhoto);
+
+        // Initialize by showing the first photo
+        showPhoto(currentPhotoIndex);
+    </script>
+    
+    <footer>
+        <p>Contact us at justintime@time.com</p>
+    </footer>
+    
+
+</body>
+</html>
